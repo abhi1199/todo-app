@@ -1,5 +1,35 @@
 package com.example.todowebapp.service;
 
-public class TodoService {
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Iterator;
+import org.springframework.stereotype.Service;
 
+import com.example.todowebapp.modal.Todo;
+
+@Service
+public class TodoService {
+   
+	private static List<Todo> todos = new ArrayList<Todo>();
+	private static int todoCount = 3;
+	
+	static {
+        todos.add(new Todo(1, "in28Minutes", "Learn Spring MVC", new Date(),
+                false));
+        todos.add(new Todo(2, "in28Minutes", "Learn Struts", new Date(), false));
+        todos.add(new Todo(3, "in28Minutes", "Learn Hibernate", new Date(),
+                false));
+    }
+
+	
+	public List<Todo> retrieveTodos(String user) {
+        List<Todo> filteredTodos = new ArrayList<Todo>();
+        for (Todo todo : todos) {
+            if (todo.getUser().equals(user)) {
+                filteredTodos.add(todo);
+            }
+        }
+        return filteredTodos;
+    }
 }
