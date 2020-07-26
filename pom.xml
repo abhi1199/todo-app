@@ -64,6 +64,13 @@
             <artifactId>jquery</artifactId>
             <version>1.9.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+<dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+  
+</dependency>
+        
 	</dependencies>
 
 	<build>
